@@ -1,0 +1,59 @@
+[features]
+seeds = false
+skip-lint = false
+[programs.localnet]
+asset_rebalancer = "BAnFYuoxjdNH3rsLrebcFeAyAwvUYmdHsrmsX4CvBF7U"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = "/Users/m1/.config/solana/id.json"
+
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+
+[[test.validator.account]]
+address = "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs"
+filename = "./clones/weth_clone.json"
+[[test.validator.account]]
+address = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+filename = "./clones/usdc_clone.json"
+
+# [[test.genesis]]
+# address = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin"
+# program = "./clones/serum_dex_v3.so"
+
+[test.validator]
+url = "https://api.mainnet-beta.solana.com"
+# ledger = "test-ledger"                          # Set ledger location.
+faucet_sol = "1500000000000000000" 
+[[test.validator.clone]]
+address = "H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG" #pyth SOL_USD Price feed
+[[test.validator.clone]]
+address = "JBu1AL4obBcCMqKBBxhpWCNUt136ijcuMZLFvTP7iWdB" #pyth ETH_USD Price feed
+[[test.validator.clone]]
+address = "9wFFyRfZBsuAha4YcuxcXLKwMxJR43S7fPfQLusDBzvT" #SOL/USDC market
+[[test.validator.clone]]
+address = "36c6YqAwyGKQG66XEp2dJc5JqjaBNv7sVghEtJv4c7u6" #SOL/USDC market base vault
+[[test.validator.clone]]
+address = "8CFo8bL8mZQK8abbFyypFMwEDd8tVJjHTTojMLgQTUSZ" #SOL/USDC quote  vault
+[[test.validator.clone]]
+address = "8Gmi2HhZmwQPVdCwzS7CM66MGstMXPcTVHA7jF19cLZz" #ETH/USDC market
+[[test.validator.clone]]
+address = "8cCoWNtgCL7pMapGZ6XQ6NSyD1KC9cosUEs4QgeVq49d" #ETH/USDC market base vault
+[[test.validator.clone]]
+address = "C7KrymKrLWhCsSjFaUquXU3SYRmgYLRmMjQ4dyQeFiGE" #ETH/USDC market quote vault
+# [[test.validator.clone]]
+# address = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v" #USDC_MINT
+[[test.validator.clone]]
+address = "FsJ3A3u2vn5cTVofAjvy6y5kwABJAqYWpe4975bi2epH" #pyth oracle program
+
+[[test.validator.clone]]
+address = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin"
+
+
+[test]
+startup_wait = 20000
