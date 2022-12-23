@@ -1,4 +1,4 @@
-# Solana Portfolio Rebalancing program 
+# Solana Portfolio Rebalancing Wallet
 
 
 - Portfolio rebalancing — In finance is a strategy of bringing a portfolio that has deviated away from one's target asset allocation back into line. In other words, you sell an outperforming assets and invests in the underperforming assets to maintain the original target allocation  or to make gains through volatility harvesting. 
